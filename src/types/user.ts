@@ -10,7 +10,7 @@ export interface UserState {
   error: null | string | any;
 }
 
-export interface UserAction {
+export interface UserAction  {
   type: UserActionTypes;
   payload: any[];
 }
