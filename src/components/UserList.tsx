@@ -13,16 +13,16 @@ const UserList: React.FC = () => {
     dispatch(fetchUsers());
   }, []);
 
-  console.log(users);
+  // console.log(users);
   
 
-  // if (loading) {
-  //   return <h1>Идет загрузка...</h1>;
-  // }
+  if (loading) {
+    return <h1>Идет загрузка...</h1>;
+  }
 
-  // if (error) {
-  //   return <h1>{error}</h1>;
-  // }
+  if (error) {
+    return <h1>{error}</h1>;
+  }
 
   return (
     <div>
