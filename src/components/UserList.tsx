@@ -6,16 +6,15 @@ import { fetchUsers } from "../store/action-creator/user";
 import { UserAction } from "../types/user";
 
 const UserList: React.FC = () => {
-  const { users, error, loading } = useTypedSelector((state) => state.user);
+
   const dispatch = useDispatch<any>();
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [fetchUsers]);
 
-  // console.log(users);
+  const { users, error, loading } = useTypedSelector((state) => state.user);
   
-
   if (loading) {
     return <h1>Идет загрузка...</h1>;
   }
@@ -27,7 +26,7 @@ const UserList: React.FC = () => {
   return (
     <div>
       {users.map((user) => (
-        <div>{user.name}</div>
+        <div key={user.id}>{user.name}</div>
       ))}
     </div>
   );

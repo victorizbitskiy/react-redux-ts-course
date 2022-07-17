@@ -1,7 +1,7 @@
 export enum UserActionTypes {
   FETCH_USERS = 'FETCH_USERS',
-  FETCH_USERS_SUCCESS = 'FETCH_USERS',
-  FETCH_USERS_ERROR = 'FETCH_USERS',
+  FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
+  FETCH_USERS_ERROR = 'FETCH_USERS_SUCCESS',
 }
 
 export interface UserState {
@@ -10,7 +10,7 @@ export interface UserState {
   error: null | string | any;
 }
 
-export interface UserAction  {
+export interface UserAction {
   type: UserActionTypes;
   payload: any[];
 }
